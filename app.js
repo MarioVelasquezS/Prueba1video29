@@ -25,6 +25,7 @@ app.get('/queryString',(req, res)=>{
 
 //este codigo es un objeto JSON solo me llevo la ruta y la coloco 
 // en el navegador y lo pruebo a ver si funciona 
+// nos da una respuesta dito JSON
 app.get('/ejerciciojson',(req, res)=>{
     res.json({status:200,message:"Success",data:"Hello word desde el express"});
 });
