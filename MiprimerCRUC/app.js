@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-
+app.use(express.json());
 //vamos a crear un objeto JSON
 //lo que hago es reservar un espacio en memoria para que se pueda ejecutar. 
 const users = [{nombre: "mario velasquez", edad:30, correo:"mavs17al@hotmail.com"},{nombre: "liliam pamela romero", edad:90, correo:"lilaimprome@hotmail.com"}]
@@ -35,10 +35,11 @@ app.get("/user/:correo",(req, res)=>{
     }
 });
 
+//con este hacemos el insert al objeto 
 app.post("/user",(req, res)=>{
    const user = req.body;
-
-   users.push(user);
+   console.log(user);
+   users.push(user); //me sirve para poder ingresar el nuevo registro a esa lista
    res.status(200).json({status:200, message:"Success", data:user});
 });
 
